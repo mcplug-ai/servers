@@ -1,0 +1,21 @@
+{
+	"name": "youtube-transcribe",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev --port 1111",
+		"start": "wrangler dev",
+		"test": "vitest",
+		"cf-typegen": "wrangler types"
+	},
+	"devDependencies": {
+		"typescript": "^5.5.2",
+		"wrangler": "^4.5.1"
+	},
+	"dependencies": {
+		"@mcplug/server": "latest",
+		"youtube-captions-scraper": "^2.0.0",
+		"zod": "^3.24.2"
+	}
+}

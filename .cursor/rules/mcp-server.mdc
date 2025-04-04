@@ -1,0 +1,63 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Creating a mcp server
+
+This repo contains a list of public mcp servers available on the marketplace mcplug.ai. 
+
+To create a new mcp server run the command `npx mcplug init`
+
+To define a mcp server the main entry point is on the src/index.ts of the mcp server project. You have an example inside the [index.ts](mdc:exa/src/index.ts). 
+
+This entry point is a cloudflare worker using the @mcplug/server sdk. 
+
+In order for the mcp project to be clean I want each tool to be defined in their own files. 
+
+I will sometimes give you a file that define a mcp server using another sdk. I will need you to rewrite it using the @mcplug/server sdk. 
+
+# Tools
+
+a tool is defined with a chainable syntax like TRPC. You have an example inside the [webSearch.ts](mdc:exa/src/webSearch.ts) file. 
+
+You will always use zod to define the Input schema.
+
+The ouput schema is not mandatory If it's too complicated you will skip it. 
+
+The handle function return either a plain text or the plain result of. If you see something like this 
+
+`
+return {
+						toolResult: {
+							content: [
+								{
+									type: 'text',
+									text: transcript,
+									metadata: {
+										videoId,
+										language: lang,
+										timestamp: new Date().toISOString(),
+										charCount: transcript.length,
+									},
+								},
+							],
+							isError: false,
+						},
+					};
+`
+
+The file i give you is following the mcp spec. But with mcplug it is not necessary. In this case the handler could only returns {
+    transcript,
+    metadata: {
+		videoId,
+		language: lang,
+		timestamp: new Date().toISOString(),
+		charCount: transcript.length,
+        },
+}
+
+In case the handler wants to return an error it should return error(errorMessage). The error function is given by mcpluga as an argument of the handler. 
+
+You have an example inside the [researchPaperSearch.ts](mdc:exa/src/researchPaperSearch.ts). 
