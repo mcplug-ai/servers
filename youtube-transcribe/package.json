@@ -18,7 +18,7 @@
   "dependencies": {
     "@cloudflare/vite-plugin": "latest",
     "@mcplug/server": "latest",
-    "@mcplug/vite": "latest",
+    "@mcplug/vite": "^1.0.3",
     "cloudflare": "latest",
     "vite": "latest",
     "wrangler": "latest",
