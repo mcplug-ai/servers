@@ -6,21 +6,30 @@ alwaysApply: true
 
 # Creating a mcp server
 
-This repo contains a list of public mcp servers available on the marketplace mcplug.ai. 
+MCP means model context protocol. 
+
+This repo contains a list of public mcp servers available on the open repository mcplug.ai. 
 
 To create a new mcp server run the command `npx mcplug init`
 
 To define a mcp server the main entry point is on the src/index.ts of the mcp server project. You have an example inside the [index.ts](mdc:exa/src/index.ts). 
 
-This entry point is a cloudflare worker using the @mcplug/server sdk. 
+This entry point is a simple object of tools, prompts and resources.
 
 In order for the mcp project to be clean I want each tool to be defined in their own files. 
 
 I will sometimes give you a file that define a mcp server using another sdk. I will need you to rewrite it using the @mcplug/server sdk. 
 
+
+
 # Tools
 
-a tool is defined with a chainable syntax like TRPC. You have an example inside the [webSearch.ts](mdc:exa/src/webSearch.ts) file. 
+
+a tool is defined with a chainable syntax like TRPC. You have an example inside the [webSearch.ts](mdc:exa-unofficial/src/webSearch.ts) file. 
+
+`
+tool("description").input(theInputShapeValidator).output(theOutputShapeValidator).handle(theHandler)
+`
 
 You will always use zod to define the Input schema.
 
@@ -58,6 +67,19 @@ The file i give you is following the mcp spec. But with mcplug it is not necessa
         },
 }
 
-In case the handler wants to return an error it should return error(errorMessage). The error function is given by mcpluga as an argument of the handler. 
+In case the handler wants to return an error it should return error(errorMessage). The error function is given by mcplug as an argument of the handler. 
 
 You have an example inside the [researchPaperSearch.ts](mdc:exa/src/researchPaperSearch.ts). 
+
+
+
+# WRITTING A README 
+
+If I ask you to write a readme you will read the tools available inside the project a product a simple but comprehensive readme of the MCP server with a general description and an outline of the tools provided by the server.
+
+Do not list input and output properties just give a brief outline for each tools.
+
+If you see that some tools have an input parameter prefixed with an underscore it means that this is a constant the user of the MCP server will have to provide. You have to list the constants. When listing constants, remove the underscore prefixing it.
+You have to mention it inside the requirement of the README you produce. If there is no constant DO NOT PUT THE REQUIREMENTS SECTION.
+
+That's it: a description, an outline and a requirement section if there is some constants. Do not put any other section inside the readme.

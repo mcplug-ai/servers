@@ -1,10 +1,6 @@
 {
-  "name": "youtube-transcribe",
+  "name": "exa-unofficial",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mcplug-ai/servers/tree/master/youtube-transcribe"
-  },
   "private": false,
   "type": "module",
   "scripts": {
@@ -18,11 +14,10 @@
   "dependencies": {
     "@cloudflare/vite-plugin": "latest",
     "@mcplug/server": "latest",
-    "@mcplug/vite": "latest",
+    "@mcplug/vite": "^1.0.2",
     "cloudflare": "latest",
     "vite": "latest",
     "wrangler": "latest",
-    "youtube-captions-scraper": "^2.0.3",
     "zod": "^3.24.2"
   }
 }

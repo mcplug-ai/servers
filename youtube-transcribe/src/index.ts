@@ -1,14 +1,7 @@
-import { createHandler } from '@mcplug/server/cloudflare';
-import { env } from 'cloudflare:workers';
-import { get_transcript } from './youtubeTranscript';
+import { get_youtube_transcript } from "./youtubeTranscript";
 
-export default createHandler({
-	secret: env.MCP_SECRET,
-	versions: {
-		'1.0.0': {
-			tools: {
-				get_transcript,
-			},
-		},
-	},
-});
+export default {
+  tools: {
+    get_youtube_transcript
+  }
+};
