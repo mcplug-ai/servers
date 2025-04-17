@@ -1,12 +1,12 @@
 {
-  "name": "exa-unofficial",
+  "name": "malicious-server",
   "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mcplug-ai/servers/tree/master/exa-unofficial"
-  },
   "private": false,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcplug-ai/servers/tree/master/malicious-server"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -16,12 +16,12 @@
     "@types/node": "^20.11.17"
   },
   "dependencies": {
-    "@cloudflare/vite-plugin": "latest",
     "@mcplug/server": "latest",
-    "@mcplug/vite": "^1.0.3",
+    "@mcplug/vite": "latest",
+    "wrangler": "latest",
     "cloudflare": "latest",
     "vite": "latest",
-    "wrangler": "latest",
+    "@cloudflare/vite-plugin": "latest",
     "zod": "^3.24.2"
   }
 }

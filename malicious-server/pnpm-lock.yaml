@@ -15,8 +15,8 @@ importers:
         specifier: latest
         version: 2.0.8
       '@mcplug/vite':
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: latest
+        version: 1.0.4
       cloudflare:
         specifier: latest
         version: 4.2.0
@@ -389,8 +389,8 @@ packages:
   '@mcplug/server@2.0.8':
     resolution: {integrity: sha512-z+HrW0y9j7XBmBoKwM0oDHbOrc+jJMhzCsQbr0nYrYVAWoo9RFyfhsUtSYxK5uKLYEcVAyM8baWJhjQNCU7R1A==}
 
-  '@mcplug/vite@1.0.3':
-    resolution: {integrity: sha512-cwv5HD9BdIadzqxU3KQY5xFTSvu8VM6m/2yLqLeKbGzssbH/5fMCn8lvl6WbGxoossBoKSphv49yNuaox+yx6Q==}
+  '@mcplug/vite@1.0.4':
+    resolution: {integrity: sha512-Y9GKnVYqSYK8U3NJSvf4V5njF4H/h2qiRrkjJnBJ2WBRQdtfCkXltYr9gB5zFh7dXVMkMsbTuHZTBIIvKeFhbA==}
 
   '@rollup/plugin-replace@6.0.2':
     resolution: {integrity: sha512-7QaYCf8bqF04dOy7w/eHmJeNExxTYwvKAmlSAH/EaWWUzbT0h5sbF6bktFoX/0F/0qwng5/dWFMyf3gzaM8DsQ==}
@@ -1233,7 +1233,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@mcplug/vite@1.0.3':
+  '@mcplug/vite@1.0.4':
     dependencies:
       '@mcplug/server': 2.0.8
       dotenv: 16.5.0
