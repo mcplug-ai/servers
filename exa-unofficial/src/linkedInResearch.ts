@@ -1,27 +1,28 @@
 import { z } from "zod";
-import { ExaSearchRequest, ExaSearchResponse, exaSearchResponseSchema } from "./types";
 import { tool } from "@mcplug/server";
+import { ExaSearchRequest, ExaSearchResponse, exaSearchResponseSchema } from "./types";
 import { API_CONFIG } from "./config";
 
-// Register the web search tool
-
-export const web_search_tool = tool(
-  "Search the web using Exa AI - performs real-time web searches and can scrape content from specific URLs. Supports configurable result counts and returns the content from the most relevant websites."
+export const linkedin_search_tool = tool(
+  "Search LinkedIn for companies using Exa AI. Simply include company URL, or company name, with 'company page' appended in your query."
 )
   .input(
     z.object({
-      query: z.string().describe("Search query"),
+      query: z.string().describe("Search query for LinkedIn (e.g., <url> company page OR <company name> company page)"),
       numResults: z.number().optional().describe("Number of search results to return (default: 5)"),
       _EXA_API_KEY: z.string().describe("Exa API key")
     })
   )
   .output(exaSearchResponseSchema)
-  .handle(async ({ input, error: e }) => {
+  .handle(async ({ input, error }) => {
     const { query, numResults, _EXA_API_KEY } = input;
+
     try {
+      // Create search request
       const searchRequest: ExaSearchRequest = {
         query,
         type: "auto",
+        includeDomains: ["linkedin.com"],
         numResults: numResults || API_CONFIG.DEFAULT_NUM_RESULTS,
         contents: {
           text: {
@@ -42,17 +43,17 @@ export const web_search_tool = tool(
       });
 
       if (!response.ok) {
-        return e(`HTTP error! Status: ${response.status}`);
+        return error(`HTTP error! Status: ${response.status}`);
       }
 
       const data = (await response.json()) as ExaSearchResponse;
 
       if (!data || !data.results) {
-        return "No search results found. Please try a different query.";
+        return "No LinkedIn results found. Please try a different query.";
       }
 
       return data;
-    } catch (error) {
-      return e(`Web search error: ${error instanceof Error ? error.message : String(error)}`);
+    } catch (err) {
+      return error(`LinkedIn search error: ${err instanceof Error ? err.message : String(err)}`);
     }
   });

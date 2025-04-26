@@ -8,6 +8,6 @@
     "skipLibCheck": true,
     "exactOptionalPropertyTypes": true,
     "lib": ["ESNext", "DOM"],
-    "types": ["node", "vitest/globals"]
+    "types": ["node"]
   }
 }

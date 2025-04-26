@@ -8,37 +8,34 @@ importers:
 
   .:
     dependencies:
-      '@cloudflare/vite-plugin':
-        specifier: latest
-        version: 1.0.8(rollup@4.40.0)(vite@6.3.1(@types/node@20.17.30))(workerd@1.20250416.0)(wrangler@4.12.0)
       '@mcplug/server':
         specifier: latest
         version: 2.0.8
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.3
+    devDependencies:
+      '@cloudflare/vite-plugin':
+        specifier: latest
+        version: 1.0.8(rollup@4.40.0)(vite@6.3.1(@types/node@20.17.30))(workerd@1.20250416.0)(wrangler@4.12.0)
       '@mcplug/vite':
-        specifier: ^1.0.7
+        specifier: latest
         version: 1.0.7
+      '@types/node':
+        specifier: ^20.11.17
+        version: 20.17.30
       cloudflare:
         specifier: latest
         version: 4.2.0
       vite:
         specifier: latest
         version: 6.3.1(@types/node@20.17.30)
+      vitest:
+        specifier: ^3.1.1
+        version: 3.1.1(@types/node@20.17.30)
       wrangler:
         specifier: latest
         version: 4.12.0
-      zod:
-        specifier: ^3.24.2
-        version: 3.24.3
-    devDependencies:
-      '@types/node':
-        specifier: ^20.11.17
-        version: 20.17.30
-      '@vitest/ui':
-        specifier: ^3.1.1
-        version: 3.1.1(vitest@3.1.1)
-      vitest:
-        specifier: ^3.1.1
-        version: 3.1.1(@types/node@20.17.30)(@vitest/ui@3.1.1)
 
 packages:
 
@@ -398,9 +395,6 @@ packages:
   '@mcplug/vite@1.0.7':
     resolution: {integrity: sha512-AbgcXVMUpSfE7V8XHjFqIDT40+NCAL+Txkrsc8PCaGuRkRpYTE5D0C+lx6WqjitRxVVoBAMZkOyuIiMRyj7fwA==}
 
-  '@polka/url@1.0.0-next.29':
-    resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
-
   '@rollup/plugin-replace@6.0.2':
     resolution: {integrity: sha512-7QaYCf8bqF04dOy7w/eHmJeNExxTYwvKAmlSAH/EaWWUzbT0h5sbF6bktFoX/0F/0qwng5/dWFMyf3gzaM8DsQ==}
     engines: {node: '>=14.0.0'}
@@ -564,11 +558,6 @@ packages:
 
   '@vitest/spy@3.1.1':
     resolution: {integrity: sha512-+EmrUOOXbKzLkTDwlsc/xrwOlPDXyVk3Z6P6K4oiCndxz7YLpp/0R0UsWVOKT0IXWjjBJuSMk6D27qipaupcvQ==}
-
-  '@vitest/ui@3.1.1':
-    resolution: {integrity: sha512-2HpiRIYg3dlvAJBV9RtsVswFgUSJK4Sv7QhpxoP0eBGkYwzGIKP34PjaV00AULQi9Ovl6LGyZfsetxDWY5BQdQ==}
-    peerDependencies:
-      vitest: 3.1.1
 
   '@vitest/utils@3.1.1':
     resolution: {integrity: sha512-1XIjflyaU2k3HMArJ50bwSh3wKWPD6Q47wz/NUSmRV0zNywPc4w79ARjg/i/aNINHwA+mIALhUVqD9/aUvZNgg==}
@@ -753,12 +742,6 @@ packages:
       picomatch:
         optional: true
 
-  fflate@0.8.2:
-    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
-
-  flatted@3.3.3:
-    resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
-
   form-data-encoder@1.7.2:
     resolution: {integrity: sha512-qfqtYan3rxrnCk1VYaA4H+Ms9xdpPqvLZa6xmMgFvhO32x7/3J/ExcTd6qpxM0vH2GdMI+poehyBZvqfMTto8A==}
 
@@ -846,10 +829,6 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  mrmime@2.0.1:
-    resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
-    engines: {node: '>=10'}
-
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -925,10 +904,6 @@ packages:
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
 
-  sirv@3.0.1:
-    resolution: {integrity: sha512-FoqMu0NCGBLCcAkS1qA+XJIQTR6/JHfQXl+uGteNCQ76T91DMUjPa9xfmeqMY3z80nLSg9yQmNjK0Px6RWsH/A==}
-    engines: {node: '>=18'}
-
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -975,10 +950,6 @@ packages:
   tinyspy@3.0.2:
     resolution: {integrity: sha512-n1cw8k1k0x4pgA2+9XrOkFydTerNcJ1zWCO5Nn9scWHTD+5tp8dghT2x1uduQePZTZgd3Tupf+x9BxJjeJi77Q==}
     engines: {node: '>=14.0.0'}
-
-  totalist@3.0.1:
-    resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
-    engines: {node: '>=6'}
 
   tr46@0.0.3:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
@@ -1408,8 +1379,6 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@polka/url@1.0.0-next.29': {}
-
   '@rollup/plugin-replace@6.0.2(rollup@4.40.0)':
     dependencies:
       '@rollup/pluginutils': 5.1.4(rollup@4.40.0)
@@ -1539,17 +1508,6 @@ snapshots:
   '@vitest/spy@3.1.1':
     dependencies:
       tinyspy: 3.0.2
-
-  '@vitest/ui@3.1.1(vitest@3.1.1)':
-    dependencies:
-      '@vitest/utils': 3.1.1
-      fflate: 0.8.2
-      flatted: 3.3.3
-      pathe: 2.0.3
-      sirv: 3.0.1
-      tinyglobby: 0.2.12
-      tinyrainbow: 2.0.0
-      vitest: 3.1.1(@types/node@20.17.30)(@vitest/ui@3.1.1)
 
   '@vitest/utils@3.1.1':
     dependencies:
@@ -1747,10 +1705,6 @@ snapshots:
     optionalDependencies:
       picomatch: 4.0.2
 
-  fflate@0.8.2: {}
-
-  flatted@3.3.3: {}
-
   form-data-encoder@1.7.2: {}
 
   form-data@4.0.2:
@@ -1849,8 +1803,6 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  mrmime@2.0.1: {}
-
   ms@2.1.3: {}
 
   mustache@4.2.0: {}
@@ -1948,12 +1900,6 @@ snapshots:
       is-arrayish: 0.3.2
     optional: true
 
-  sirv@3.0.1:
-    dependencies:
-      '@polka/url': 1.0.0-next.29
-      mrmime: 2.0.1
-      totalist: 3.0.1
-
   source-map-js@1.2.1: {}
 
   source-map@0.6.1: {}
@@ -1985,8 +1931,6 @@ snapshots:
   tinyrainbow@2.0.0: {}
 
   tinyspy@3.0.2: {}
-
-  totalist@3.0.1: {}
 
   tr46@0.0.3: {}
 
@@ -2047,7 +1991,7 @@ snapshots:
       '@types/node': 20.17.30
       fsevents: 2.3.3
 
-  vitest@3.1.1(@types/node@20.17.30)(@vitest/ui@3.1.1):
+  vitest@3.1.1(@types/node@20.17.30):
     dependencies:
       '@vitest/expect': 3.1.1
       '@vitest/mocker': 3.1.1(vite@6.3.1(@types/node@20.17.30))
@@ -2071,7 +2015,6 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.17.30
-      '@vitest/ui': 3.1.1(vitest@3.1.1)
     transitivePeerDependencies:
       - jiti
       - less

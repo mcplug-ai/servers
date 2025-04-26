@@ -4,7 +4,7 @@ import { tool } from "@mcplug/server";
 import { API_CONFIG } from "./config";
 
 // Register the research paper search tool
-export const research_paper_sexarch_tool = tool(
+export const research_paper_search_tool = tool(
   "Search across 100M+ research papers with full text access using Exa AI - performs targeted academic paper searches with deep research content coverage. Returns detailed information about relevant academic papers including titles, authors, publication dates, and full text excerpts. Control the number of results and character counts returned to balance comprehensiveness with conciseness based on your task requirements."
 )
   .input(

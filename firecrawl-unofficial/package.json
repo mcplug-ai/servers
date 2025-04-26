@@ -1,0 +1,33 @@
+{
+  "name": "firecrawl-unofficial",
+  "version": "1.0.0",
+  "private": false,
+  "repository": {
+    "url": "https://github.com/mendable/firecrawl-unofficial"
+  },
+  "homepage": "https://www.firecrawl.dev/",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "publish": "npx mcplug publish",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "latest",
+    "@mcplug/vite": "^1.0.12",
+    "@types/node": "^20.11.17",
+    "@vitest/ui": "latest",
+    "cloudflare": "latest",
+    "vite": "latest",
+    "vitest": "latest",
+    "wrangler": "latest"
+  },
+  "dependencies": {
+    "@mcplug/server": "^2.0.10",
+    "@mendable/firecrawl-js": "^1.24.0",
+    "p-queue": "^8.1.0",
+    "zod": "^3.24.2"
+  }
+}

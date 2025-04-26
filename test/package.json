@@ -1,12 +1,8 @@
 {
-  "name": "malicious-server",
+  "name": "test",
   "version": "1.0.0",
   "private": false,
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mcplug-ai/servers/tree/master/malicious-server"
-  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -16,16 +12,15 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
-    "@vitest/ui": "^3.1.1",
-    "vitest": "^3.1.1"
-  },
-  "dependencies": {
-    "@cloudflare/vite-plugin": "latest",
-    "@mcplug/server": "latest",
-    "@mcplug/vite": "^1.0.7",
-    "cloudflare": "latest",
+    "vitest": "^3.1.1",
     "vite": "latest",
     "wrangler": "latest",
+    "@mcplug/vite": "latest",
+    "cloudflare": "latest",
+    "@cloudflare/vite-plugin": "latest"
+  },
+  "dependencies": {
+    "@mcplug/server": "latest",
     "zod": "^3.24.2"
   }
 }

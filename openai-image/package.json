@@ -1,0 +1,36 @@
+{
+  "name": "openai-image-generation",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "Generate images with OpenAI ",
+  "keywords": [
+    "openai",
+    "image"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mcplug-ai/servers/tree/master/openai-image"
+  },
+  "scripts": {
+    "dev": "vite dev --port 5174",
+    "build": "vite build",
+    "publish": "npx mcplug publish",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "latest",
+    "@mcplug/vite": "latest",
+    "@types/node": "^20.11.17",
+    "@vitest/ui": "latest",
+    "cloudflare": "latest",
+    "vite": "latest",
+    "vitest": "latest",
+    "wrangler": "latest"
+  },
+  "dependencies": {
+    "@mcplug/server": "^2.0.11",
+    "zod": "^3.24.2"
+  }
+}

@@ -1,0 +1,14 @@
+{
+   "mcpServers": {
+      "mcplug-dev": {
+         "command": "npx",
+         "args": [
+            "-y",
+            "@mcplug/client",
+            "--dev",
+            "5173"
+         ],
+         "env": {}
+      }
+   }
+}
